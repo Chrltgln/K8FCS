@@ -1,0 +1,154 @@
+/* Footer Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+*{
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body > :not(.footer) {
+    flex: 1;
+}
+
+.footer {
+    background-color: #053010;
+    padding: 20px;
+    color: #fff;
+    bottom: 0;
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.footer-item {
+    margin: 10px;
+}
+
+.footer-item-container {
+    display: flex;
+    gap: 2rem;
+}
+
+#k8logofooter {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+#k8fcstitle {
+    margin-top: 15px;
+    margin-left: 20px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.footer-items-header, .footer-items-subheader {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-logo {
+    height: 80px;
+}
+
+.footer-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-title-h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    font-size: 14px;
+    line-height: 1.6;
+}
+ a{
+    text-decoration: none;
+    color: #fff;
+}
+a:hover{
+    cursor: pointer;
+    color: #feda00;
+    text-decoration: none;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 1024px) {
+
+    .footer-content {
+        display: block;
+    }
+
+    .footer-image-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .footer-item-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+
+    
+    .footer-content {
+        display: block;
+    }
+
+    .footer-image-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .footer-item-container {
+        display: block;
+    }
+
+    .footer-items-header, .footer-items-subheader {
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .footer-items-subheader {
+        gap: 6rem;
+    }
+}
+
+@media (max-width: 320px) {
+
+    #k8fcstitle {
+        font-size: 20px;
+        margin: 0;
+        margin-left: 10px;
+    }
+}

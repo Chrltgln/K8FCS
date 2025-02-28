@@ -1,0 +1,249 @@
+* {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.team-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.team-section h1 {
+    color: #006320;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}   
+
+.team-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px;
+    height: 550px;
+    text-align: center;
+}
+
+.team-img {
+    margin-bottom: 20px;
+}
+
+.team-img img {
+    border-radius: 50%;
+    border: 5px solid #006320;
+    width: 200px; /* Set the width to 100 pixels */
+    height: 200px; /* Set the height to 100 pixels */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    color: #333333;
+}
+
+.team-card p {
+    color: #777777;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.team-card .social-icons {
+    margin-top: 20px;
+}
+
+.team-card .social-icons a {
+    color: #006320;
+    margin: 0 10px;
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+.team-member-description {
+    margin-top: 1rem;
+    text-align: justify;
+    width: 90%;
+}
+
+.credits {
+    margin-top: 50px;
+}
+
+.credits a {
+    color: #006320;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+.header-container {
+    margin-top: 20px;
+    background-image: url('/K8FCS/assets/images/meet-the-team.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+    text-align: center;
+}
+
+#meettheteamheadertitle {
+    font-size: 100px;
+    color: #FFF;
+    text-shadow: 
+    -0.5px -0.5px 0 #FFF,  
+    0.5px -0.5px 0 #FFF,
+    -0.5px  0.5px 0 #FFF,
+    0.5px  0.5px 0 #FFF;
+    font-family: 'Arial';   
+}
+
+#meettheteamheaderdesc {
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    color: #FFF;
+    letter-spacing: 2px;
+}
+
+/* Mobile Responsive */
+
+@media(max-width: 1200px) {
+    .team-card {
+        width: 25%;
+    }
+
+    
+.team-member-description {
+    text-align: center;
+}
+}
+
+@media (max-width: 1060px) {
+    .team-card {
+        height: 40rem;
+    }
+}
+@media (max-width: 1025px) {
+    #meettheteamheadertitle {
+        font-size: 75px;
+    }
+
+    #meettheteamheaderdesc {
+        font-size: 18px;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .team-card {
+        width: 30%;
+    }
+
+    .team-container {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 820px) {
+    #meettheteamheadertitle {
+        font-size: 55px;
+    }
+
+    #meettheteamheaderdesc {
+        font-size: 12px;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-card {
+        width: 60%;
+    }
+}
+
+@media (max-width: 650px) {
+    .team-card {
+        width: 80%;
+        height: 35rem;
+    }
+}
+
+@media (max-width: 500px) {
+   
+        .header-container, .header-title {
+          height: 8rem;
+        }
+      
+        .header-title {
+          margin-bottom: 8rem;
+        }
+      
+        #meettheteamheadertitle {
+          font-size: 50px;
+        }
+      
+        #meettheteamheaderdesc {
+          display: none;
+        }
+    }
+
+
+@media (max-width: 435px) {
+    .team-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 376px) {
+    #meettheteamheadertitle {
+        font-size: 45px;
+    }
+
+    .header-title {
+        margin-bottom: 7rem;
+      }
+
+}
+
+@media (max-width: 335px) {
+    #meettheteamheadertitle {
+        font-size: 38px;
+    }
+}

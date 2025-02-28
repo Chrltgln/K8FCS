@@ -1,0 +1,615 @@
+* {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
+
+.container {
+    width: 90%;
+    padding: 20px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    height: 40rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+}
+
+.my-files-container {
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    background-color: #053010;
+    padding: 20px;
+    color: #fff;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#search {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    width: 55%;
+    height: 50px;
+    outline: none;
+    padding: 0.5rem; /* Add padding for better appearance */
+    font-size: 1rem;
+    margin: 0;
+}
+
+#search::placeholder {
+    color: #aaa;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 2rem;
+    gap: 20%;
+}
+
+.header-top,
+.header-bottom {
+    display: flex;
+    align-items: center;
+}
+
+.header-top {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-bottom {
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.sort-by {
+    display: flex;
+    align-items: center;
+}
+
+.sort-by span {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #000;
+}
+
+.sort-button {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 16px;
+    border-radius: 20px;
+    color: #555;
+    height: 40px;
+}
+
+.sort-button.active {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.add-files-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 0 5rem;
+    grid-auto-flow: dense;
+    justify-items: center;
+    align-items: center;
+    overflow-y: auto;
+    max-height: 40rem;
+    gap: 1rem;
+}
+
+.file-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+}
+
+.file-item {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 250px; /* Set the maximum width */
+    height: 200px; /* Set the maximum height */
+    text-align: center;
+    transition: transform 0.3s;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ensure the file-name is always at the top */
+    position: relative; /* Ensure the file-item is the positioning context */
+    overflow: visible; /* Ensure the popup is visible */
+    padding-top: 5px; /* Add padding to move content up */
+}
+
+.file-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.file-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px; /* Add margin to separate from other content */
+    font-size: 13px;
+    min-width: 230px;
+    max-width: 230px;
+}
+
+.file-description, .file-date {
+    font-size: 12px;
+}
+
+/* Styles for the upload file container */
+.upload-file-container {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black background with opacity */
+}
+
+.upload-file-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.upload-file-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.upload-file-content input[type="file"] {
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+}
+
+.upload-file-content button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-file-content button:hover {
+    background-color: #218838;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#search-file-container {
+    width: 30%;
+}
+
+.file-item span {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.download-button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-top: 0.5rem;
+    border: none;
+    align-self: center;
+}
+
+.delete-button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #ff5757;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    width: 86px;
+    margin-top: 0.5rem;
+    height: 32px;
+}
+
+.file-preview img {
+    width: 220px; /* Fixed width */
+    height: 120px; /* Fixed height */
+    object-fit: cover; /* Ensure the image covers the container */
+    transition: transform 0.3s ease; /* Smooth zoom-out effect */
+    margin-top: 0.5rem;
+    cursor: pointer; /* Indicate that the image is clickable */
+}
+
+#filePreviewModal {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: visibility 0s, opacity 0.3s linear;
+}
+
+#filePreviewModal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+#filePreviewModal .modal-content-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: transparent;
+    border: 0;
+}
+
+#preview-picture {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#filePreviewModal .close-preview-button {
+    color: white;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    font-size: 40px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    position: relative; /* Ensure the file-item is the positioning context */
+}
+
+.more-actions {
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.actions-popup {
+    display: none;
+    position: absolute; /* Change to absolute positioning */
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 10px;
+    border-radius: 5px;
+    top: 20%; /* Position below the file-name */
+    left: 70%; /* Align to the left of the file-item */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    max-width: 200px; /* Set a fixed width for the popup */
+}
+
+.actions-popup a, .actions-popup button {
+    display: block;
+    margin: 5px 0;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+.actions-popup a:hover, .actions-popup button:hover {
+    text-decoration: underline;
+}
+
+.no-appointments-message-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.no-appointments-message {
+    font-size: 18px;
+    color: #555;
+}
+
+.no-appointments-icon {
+    font-size: 50px;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.return-button-container {
+    margin-top: 3rem;
+    padding-left: 5rem;
+}
+
+.return-button {
+    background-color: #053010;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 1700px) {
+    .file-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .actions-popup {
+        left: 40%;
+    }
+}
+
+@media (max-width: 1500px) {
+    .header {
+        gap: 10%;
+    }
+}
+
+@media (max-width: 1400px) {
+    .file-grid {
+        padding: 0 0.5rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .actions-popup {
+        left: 30%;
+    }
+}
+@media (max-width: 1350px) {
+    .header {
+        padding: 0 0.5rem;
+    }
+
+    .add-files-button {
+        font-size: 12px;
+    }
+
+    .sort-by span {
+        font-size: 16px;
+    }
+
+    #search {
+        height: auto;
+    }
+
+    .my-files-title {
+        font-size: 24px;
+    }
+
+    .header-bottom {
+        gap: 8rem;
+    }
+
+    .header {
+        gap: 5%;
+    }
+}
+
+@media (max-width: 1060px) {
+    .header {
+        gap: 1%;
+    }
+}
+@media (max-width: 980px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .header-top {
+        justify-content: space-between;
+    }
+
+    .header-bottom {
+        margin-top: 1.5rem;
+    }
+
+    .add-files-button {
+        font-size: 16px;
+        margin-right: 5px;
+    }
+
+    .file-grid {
+        padding: 0 0.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        overflow-y: auto;
+        max-height: 35rem;
+    }
+}
+
+@media (max-width: 925px) {
+    .file-grid {
+        padding: 0 0.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        overflow-y: auto;
+        max-height: 35rem;
+    }
+
+    .actions-popup {
+        left: 40%;
+    }
+
+}
+@media (max-width: 768px){
+    .file-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .actions-popup {
+        left: 30%;
+    }
+}
+
+@media (max-width: 630px) {
+    .file-grid {
+        grid-template-columns: repeat(1, 1fr);
+        max-height: 30rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .header-top, .header-bottom {
+        flex-direction: column;
+    }
+
+    .header-bottom {
+        gap: 0;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    #search-file-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    #search {
+        width: 100%;
+        flex: 1;
+    }
+
+    .add-files-button {
+        margin-top: 1rem;
+        width: 100%;
+        flex: 1;
+    }
+
+    .my-files-title {
+        font-size: 30px;
+    }
+
+    .sort-by {
+        margin-top: 1rem;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 420px) {
+    
+    .file-grid {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0;
+    }
+
+    .sort-button {
+        font-size: 12px;
+        padding: 10px 20px;
+    } 
+}
+
+@media (max-width: 320px) {
+    .actions-popup {
+        left: 25%;
+    }
+}

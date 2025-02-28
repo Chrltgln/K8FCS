@@ -1,0 +1,541 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+
+.header-container {
+  margin-top: 30px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 23rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#aboutusheadertitle {
+  font-family: 'Arial';
+  font-size: 100px;
+  color: #FFF;
+  text-shadow: 
+  -0.5px -0.5px 0 #FFF,  
+  0.5px -0.5px 0 #FFF,
+ -0.5px  0.5px 0 #FFF,
+  0.5px  0.5px 0 #FFF; /* Thinner shadow */
+}
+
+#aboutusheaderdesc {
+  font-size: 20px;
+  margin-bottom: 10px;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  font-family: 'Inter';
+  color: #FFF;
+  letter-spacing: 2px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+  text-align: center;
+}
+
+
+.aboutus-section-title {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: #0d6320; 
+  padding: 10px 20px; 
+  text-align: center;
+  width: 80%; 
+  box-sizing: border-box; 
+  font-size: 120px;
+  letter-spacing: 0.15rem;
+}
+
+.aboutus-section-desc {
+  position: absolute;
+  top: 70%;  /* Position description below the title */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000000;
+  padding: 10px 20px;
+  text-align: center;
+  width: 90%;
+  box-sizing: border-box;
+  font-size: 24px;
+  font-family: 'Inter';
+  letter-spacing: 0.05rem;
+}
+
+
+.section-container {
+  padding: 2% 5%;
+  margin: 2% auto;
+}
+
+.section-content {
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto; /* Center the container itself */
+  padding: 0; /* Remove padding */
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: left; /* Center the content vertically */
+  flex-direction: column; /* Ensure content stacks vertically */
+  margin-bottom: 30px;
+}
+
+.section-body {
+  display: block;
+  align-items: center;
+  margin: 0 auto;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.section-text,
+.section-image {
+  flex: 1;
+  min-width: 200px;
+  margin: 1% 2%;
+}
+
+.section-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #1e1e1e;
+  font-family: 'Arial';
+}
+ 
+.section-paragraph {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #1e1e1e;
+  text-align: justify;
+  padding-right: 2%;
+}
+
+.section-subtitle {
+  margin-top: 2rem; 
+  font-size: 2.5rem;
+  margin-bottom: 0.15rem;
+  color: #0d6320;
+  font-family: 'Arial';
+}
+
+
+.button {
+  padding: 10px 20px;
+  background-color: #053010;
+  color: #f4f4f4;
+  /* Previously --primary-foreground */
+  border: none;
+  border-radius: 0.25rem;
+  /* Previously --radius */
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 1.5rem;
+}
+
+.button:hover {
+  background-color: #005f15;
+  color: white;
+  text-decoration: none;
+}
+
+.muted-background {
+  background-color: #f2f2f2;
+  /* Previously --muted */
+  color: #747474;
+  /* Previously --muted-foreground */
+}
+
+ /* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #053010;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-size: 20px;
+  position: relative;
+}
+
+.accordion::after {
+  content: '\002B'; /* Unicode for "+" symbol */
+  color: #ecc94b;
+  font-weight: bold;
+  font-size: 40px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.4s;
+}
+
+.activeaccordion::after {
+  content: '\2212'; /* Unicode for "−" symbol */
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+} 
+
+.panel p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #1e1e1e;
+}
+
+/* START OF DESIGN(PROFILE LINK) */
+#profile-link {
+  text-decoration: none;
+  color: #333;
+}
+
+#profile-link p {
+  margin: 0;
+  padding: 5px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+#profile-link:hover p {
+  background-color: #ddd;
+}
+
+
+@media (max-width: 1600px) {
+
+  .section-titleparagraph {
+    margin-left: 40%;
+    margin-bottom: 2%;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .image-rounded {
+    width: 500px;
+    height: 300px;
+  }
+
+}
+@media (max-width: 1440px) {
+ 
+  .section-text,
+  .section-image {
+    width: 100%;
+    margin: 0;
+  }
+
+  .section-title{
+      font-size: 2.5rem;
+  }
+
+  .section-subtitle {
+      font-size: 2.5rem;
+  }
+
+  .section-body {
+    margin-top: 1rem;
+  }
+
+  .image-rounded {
+    width: 350px;
+    height: 250px;
+    margin-bottom: 20px;
+    margin-left: 40%;
+  }
+}
+
+
+@media (max-width: 1024px) {
+
+  .section-content,
+  .section-body {
+    display: block;
+  }
+
+  .section-titleparagraph {
+    margin: 0%;
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    text-align: left;
+    margin-left: 20px;
+    width: 100%;
+  }
+
+  .section-paragraph {
+    font-size: 1rem;
+    margin-left: 3%;
+    width: 98%;
+  }
+
+  .button {
+    font-size: 15px;
+    width: 8rem;
+    height: 20%;
+    padding: 10px;
+    margin-left: 3%;
+  }
+
+  #first-section-subtitle {
+    margin-top: 2rem;
+  }
+
+  .section-subtitle {
+    width: 100%;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0%;
+    margin-top: 1.5rem;
+  }
+
+  #aboutusheadertitle {
+    font-size: 90px;
+  }
+
+  #aboutusheaderdesc {
+    font-size: 20px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .aboutus-section-title {
+      font-size: 90px;
+  }
+
+  .aboutus-section-desc {
+      top: 65%;
+      font-size: 18px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-paragraph {
+    font-size: 1rem;
+  }
+
+  .button {
+    font-size: 14px;
+    height: 20%;
+    padding: 10px;
+    margin-left: 3%;
+    margin-top: 1rem;
+  }
+
+  .section-subtitle {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .header-title {
+    margin-bottom: 12rem;
+  }
+
+  #aboutusheadertitle {
+    font-size: 90px;
+  }
+
+  #aboutusheaderdesc {
+    font-size: 20px;
+  }
+
+  .accordion {
+    font-size: 16px;
+  }
+
+  .panel p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .button {
+    font-size: 12px;
+    width: 30%;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .aboutus-section-title {
+      font-size: 70px;
+  }
+
+  .aboutus-section-desc {
+      top: 70%;
+      font-size: 18px;
+  }
+
+  .section-title {
+      margin-left: 2%;
+      font-size: 1.5rem;
+  }
+
+  .section-paragraph {
+    font-size: 0.8rem;
+  }
+
+
+  .section-subtitle {
+    font-size: 2rem;
+  }
+
+  .accordion {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  #aboutusheadertitle {
+    font-size: 80px;
+  }
+
+  #aboutusheaderdesc {
+    font-size: 15px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .header-container, .header-title {
+    height: 8rem;
+  }
+
+  .header-title {
+    margin-bottom: 9rem;
+  }
+
+  #aboutusheadertitle {
+    font-size: 60px;
+  }
+
+  #aboutusheaderdesc {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .accordion {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 390px) {
+
+  
+  .aboutus-section-title {
+      font-size: 55px;
+  }
+
+  .aboutus-section-desc {
+      font-size: 15px;
+  }
+
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .section-paragraph {
+    font-size: 0.7rem;
+  }
+
+  .section-subtitle {
+    font-size: 2rem;
+  }
+
+  .button, .button-learnmore {
+      font-size: 12px;
+      width: 40%;
+    }
+
+}
+
+@media (max-width: 375px) {
+  #aboutusheadertitle {
+    font-size: 60px;
+  }
+
+  #aboutusheaderdesc {
+    font-size: 15px;
+  }
+  
+  .accordion {
+    font-size: 10px;
+    max-width: 110%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 320px) {
+
+  #aboutusheadertitle {
+    font-size: 55px;
+  }
+}
+
+
+/* Unified Fade Animation */
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  animation: fade 1.5s ease-in-out;
+}

@@ -1,0 +1,15 @@
+change the following when uploading to host
+
+
+process_forgot_password.php
+
+from this 
+	 $resetLink = "http://localhost/K8FCS/login/reset_password.php?token=" . $token;
+to this
+	 $resetLink = "http://k8fcs.infinityfreeapp.com/login/reset_password.php?token=" . $token;
+
+
+
+config.php
+change the values of config
+

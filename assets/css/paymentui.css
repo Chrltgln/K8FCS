@@ -1,0 +1,241 @@
+* {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+body {
+    padding-top: 70px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url('../images/employee/employeebg.png');
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.paymentui {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 50%;
+    margin-top: 10rem;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    height: auto;
+}
+
+.payment-ui-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    width: 100%;  
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.remarks-container {
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 8%;
+    width: 80%;
+}
+
+.container h2 {
+    margin-bottom: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="date"],
+#bank-partner,
+textarea, 
+select {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+    width: 80%;
+    color: black;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    min-height: 39px;
+}
+
+textarea {
+    width: 95%;
+    height: 10rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+button {
+    padding: 10px 15px;
+    background-color: #026220;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form>div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+button:hover {
+    background-color: #00a334;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        margin-top: 15rem;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        width: 85%;
+    }
+
+    .container {
+        margin-top: 10rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .payment-ui-container, .remarks-container {
+        margin-left: 1rem;
+    }
+}
+ 
+@media (max-width: 500px) {
+
+    .container h2 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    label, input[type="number"],
+    input[type="text"],
+    #bank-partner,
+    textarea {
+        font-size: 0.9rem;
+        width: 90%;
+    }
+
+    .payment-ui-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+@media (max-width: 500px) {
+    
+    .container {
+        margin-top: 7rem;
+        width: 90%;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    label {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input[type="number"],
+    input[type="text"],
+    input[type="date"],
+    #bank-partner,
+    select {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .payment-ui-container {
+        margin-left: 0.8rem;
+    }
+
+    .textarea {
+        width: 90%
+    }
+
+    form>div {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 375px) {
+    
+    .container {
+        margin-top: 7rem;
+        margin-bottom: 3rem;
+    }
+    
+    input[type="number"],
+    input[type="text"],
+    input[type="date"],
+    #bank-partner,
+    select {
+        margin-bottom: 15px;
+    }
+
+    .textarea {
+        width: 100%
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    .remarks-container {
+        margin: 0;
+        margin-left: 0.8rem;
+    }
+}
